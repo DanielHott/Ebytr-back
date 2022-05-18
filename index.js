@@ -18,6 +18,12 @@ app.use((_req, res, next) => {
 
 app.get('/tasks', TasksController.getTasks);
 
+app.post('/tasks', TasksController.createTask);
+
+app.patch('/tasks/update', TasksController.updateTask);
+
+app.delete('/tasks', TasksController.deleteTask);
+
 app.listen(PORT, () => {
     console.log(`Servidor na porta ${PORT}`)
 })
