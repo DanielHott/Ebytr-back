@@ -14,6 +14,7 @@ async function createTask(req, res) {
   try {
     const tasks = await TasksServices.createTasks(req.body);
     return res.status(200).json(tasks);
+    if (!tasks) return res.status(400).json({ message: "Descricao, status e prioridade devem ser inseridos!" });
   } catch (err) {
     console.log(err);
     return res.status(400).json(err);

@@ -8,7 +8,7 @@ const TasksController = require('./controller/TasksController');
 
 app.use(express.json());
 
-const PORT = process.env.PORT || 3010;
+const PORT = process.env.PORT || 3009;
 
 app.use((_req, res, next) => {
     res.header('Access-Control-Allow-Origin', '*' )

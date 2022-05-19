@@ -9,11 +9,13 @@ async function getTasks() {
 async function createTasks(body) {
   const { descricao, status, prioridade } = body;
   const data = new Date();
+  if (descricao && status && prioridade) {
   const allTasks = await Tarefas.create({
       descricao, status, data, prioridade
   });
-  if (!allTasks) return null;
   return allTasks;
+}
+  return null;
 }
 
 async function updateTasks(body) {
